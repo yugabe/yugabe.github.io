@@ -1,0 +1,87 @@
+﻿<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href=""><img src="/img/kraken.png" class="navbar-image" /> yugabe.github.io/bme</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+                <span class="oi oi-home"></span> Kezdőoldal
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="temak">
+                <span class="oi oi-task"></span> Téma infók
+            </NavLink>
+        </li>
+
+        <li><hr /></li>
+
+        <li class="nav-item px-3 small">
+            <a class="nav-link" href="https://www.aut.bme.hu/Staff/Gabe" target="_blank" title="Munkatársi oldalam és meghirdetett témáim az AUT portálon">
+                <img src="/img/aut-profile.jpg" class="inherit-height" /> AUT/Gabe
+            </a>
+            <a class="nav-link" href="https://github.com/yugabe" target="_blank" title="GitHub oldalam">
+                <img src="/img/github-profile.jpeg" class="inherit-height" /> GitHub/yugabe 
+            </a>
+        </li>
+
+        <li><hr /></li>
+
+        <li class="nav-item small">
+            <div class="mx-3 row">
+                <a class="nav-link col" href="https://www.bme.hu/" target="_blank" title="Budapesti Műszaki és Gazdaságtudományi Egyetem">
+                    BME
+                </a>
+                <a class="nav-link col" href="https://www.vik.bme.hu/" target="_blank" title="BME - Villamosmérnöki és Informatikai Kar">
+                    VIK
+                </a>
+                <a class="nav-link col" href="https://www.aut.bme.hu/" target="_blank" title="BME VIK - Automatizálási és Alkalmazott Informatikai Tanszék">
+                    AUT
+                </a>
+            </div>
+        </li>
+
+        <li><hr /></li>
+
+        <li class="nav-item px-3 small">
+            <a class="nav-link" href="https://dotnet.microsoft.com/" target="_blank">
+                .NET
+            </a>
+            <a class="nav-link" href="https://dotnet.microsoft.com/apps/aspnet" target="_blank">
+                ASP.NET
+            </a>
+            <a class="nav-link" href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor" target="_blank">
+                Blazor
+            </a>
+            <a class="nav-link" href="https://unity.com/" target="_blank">
+                Unity
+            </a>
+            <a class="nav-link" href="https://www.microsoftedgeinsider.com/en-us/download" target="_blank">
+                Edge Insider
+            </a>
+        </li>
+
+        <li><hr /></li>
+
+        <li class="nav-item px-3 small">
+            <a class="nav-link" href="hogyan-keszult">
+                <i>Hogyan készült?</i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}

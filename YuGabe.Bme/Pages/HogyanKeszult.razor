@@ -1,0 +1,29 @@
+﻿@page "/hogyan-keszult"
+
+<h3>Hogyan készült ez az oldal?</h3>
+
+<p>Ez az oldal a Microsoft ASP.NET <a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor" target="_blank">Blazor</a> technológiájával készült, ami egy .NET alapú, böngészőben futtatható <a href="https://en.wikipedia.org/wiki/Single-page_application" target="_blank">SPA</a>-keretrendszer.</p>
+
+<p>Az oldal statikus (és ingyenes) kiszolgálását a GitHub Pages teszi lehetővé. Az oldal forráskódja a <a href="https://github.com/yugabe/bme" target="_blank">github.com/yugabe/bme</a> repository-ban található, a lefordított oldal forráskódja pedig ugyanitt, a <a href="https://github.com/yugabe/bme/tree/gh-pages">gh-pages</a> ágon.</p>
+
+<p>Az oldal publikálását automatizmus végzi, amelyért a <a href="https://github.com/features/actions" target="_blank">GitHub Actions</a> felel. A telepítés egyszerű leírását az alábbi <a href="https://github.com/yugabe/bme/blob/master/.github/workflows/gh-pages.yml" target="_blank">YAML fájl</a> tartalmazza.</p>
+
+<p>Köszönet továbbá a <a href="https://getbootstrap.com/" target="_blank">Bootstrap CSS</a> és <a href="https://useiconic.com/open" target="_blank">Open Iconic technológiáknak</a>.</p>
+
+<hr />
+
+<p>
+    A linkek után automatikusan elhelyezésre kerültek az <a href="#" target="_blank" @onclick:preventDefault>alábbi Open Iconic ikonok</a>. Ehhez a lenti CSS kódrészlet nyújthat segítséget, ha szeretnéd alkalmazni:
+    <br />
+    <code>
+        a[target="_blank"]:not(.no-ext-icon)::after {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;content: '\e064';<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;font-family: Icons;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;font-size: 0.5rem;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;padding-left: 0.2rem;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;top: -0.25rem;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;position: relative;<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;filter: opacity(60%);<br />
+        }
+    </code>
+</p>

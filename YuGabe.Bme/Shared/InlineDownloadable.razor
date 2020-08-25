@@ -1,0 +1,7 @@
+﻿<a href="@Href" target="_blank">@ChildContent</a><a href="@Href" download title="Fájl letöltése" target="_blank" class="no-ext-icon"><i class="oi oi-cloud-download"></i></a>
+@code {
+    [Parameter]
+    public string Href { get; set; } = default!;
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = default!;
+}

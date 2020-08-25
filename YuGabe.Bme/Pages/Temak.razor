@@ -1,0 +1,122 @@
+﻿@page "/temak"
+
+@code {
+    public RenderFragment FeladatkiirasDownloadable { get; } = @<InlineDownloadable Href="/attachments/HintMe-Intelligens-tartalomajanlo-motor-Feladatkiiras.pdf">HintMe - Intelligens tartalomajánló motor - Feladatkiírás</InlineDownloadable>;
+
+    [Inject]
+    public NavigationManager NavigationManager { get; set; } = default!;
+    [Inject]
+    public DocumentService DocumentService { get; set; } = default!;
+
+    override protected async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        NavigationManager.LocationChanged += OnLocationChanged;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+            await OnLocationChangedAsync(NavigationManager.Uri);
+        await base.OnAfterRenderAsync(firstRender);
+    }
+
+    private async void OnLocationChanged(object sender, LocationChangedEventArgs locationChangedArgs)
+        => await OnLocationChangedAsync(locationChangedArgs.Location);
+
+    private async Task OnLocationChangedAsync(string location)
+        => await DocumentService.ScrollToElementIdAsync(new string(new Uri(location).Fragment?.SkipWhile(c => c == '#').ToArray()));
+
+    ~Temak()
+        => NavigationManager.LocationChanged -= OnLocationChanged;
+}
+
+<h1>Téma információk</h1>
+
+<p><i class="text-muted">Utolsó frissítés: 2020. 08. 25.</i></p>
+
+<p>
+    Ez a tájékoztató ismerteti azokat az alapvetéseket, amelyeket BSc Önálló labor, BSc Szakdolgozat/Szakdolgozat-készítés, MSc Önálló labor 1/2 vagy MSc Diplomatervezés 1/2 esetén, amennyiben nálam végzed ezen tárgyak valamelyikét, <b>elvárok</b>, hogy ismerned kell. Összefoglalom a félév során felmerülő fontos feladataid és a tárgy(ak) elvégzéséhez szükséges általános információkat. Még egyszer tehát: ezek az <b>én elvárásaim</b>, más konzulenseknek más elvárásai vannak.
+</p>
+
+<ul class="list-unstyled">
+    <li><a href="/temak#bevezeto"><b>Bevezető gondolatok</b></a></li>
+    <li><a href="/temak#gyakori-hibak-a-feladatkiirasban"><b>Gyakori hibák a feladatkiírásban</b></a></li>
+</ul>
+
+<h2 id="bevezeto">Bevezető gondolatok</h2>
+<ul>
+    <li>
+        Az Önálló labor (BSc, MSc 1/2, akár vegyesen) tárgyakat általában van lehetőség kisebb csoportokba szerveződve is végezni. Ennek előnye lehet, hogy tanulsz csapatmunkát, meg tudjátok osztani a feladatokat egymás között, koncentrálhatsz a téged jobban érdeklő részekre. Hátránya, hogy a következő félévben nem jó ötlet folyatni a témát úgy egyedül, hogy gyakorlatilag ugyanazt szeretnéd elvégezni, mint korábban csapatban, csak most egyedül.
+    </li>
+    <li>
+        Jó, ha félévről félévre egyre bonyolultabb témákat vállalsz és készítesz. BSc Önlab esetén elegendő egy-egy alaptechnológia megismerése, ugyanakkor Szakdolgozat esetén több technológia használatával egy komplexebb probléma megoldása vagy egy technológia nagyon mély elsajátítása szükséges. MSc Önlab esetén érdemes tovább orientálódni, ekkor már jó eséllyel tudod, hogy melyik technológiák érdekelnek; itt Önlab esetében érdemes mélyíteni a meglevő tudást és egyúttal tágítani a látókört (pl. egy kisebb technológiát elsajátítani és integrálni egy már általad jól ismerttel) vagy jelentősen bonyolultabb/absztraktabb problémát megoldani.
+    </li>
+    <li>
+        Kifejezetten szoktam preferálni, ha absztrakciós készség fejlesztésére irányuló témát választasz. Ilyen lehet például egy okos keretrendszer elkészítése, ami futás időben generál futtatható kódot (lásd: <a href="https://github.com/yugabe/QueryMutator" target="_blank">QueryMutator</a>). Ennek ellentéte, amikor "csak" egy tetszőleges alkalmazást (játékot/webalkalmazást stb.) szeretnél elkészíteni. Természetesen ilyen témába csak akkor vágj bele, ha:
+        <ul>
+            <li>van elegendő tapasztalatod a keretrendszer elkészítéséhez,</li>
+            <li>kellően szorgalmas vagy ahhoz, hogy végig is csináld és/vagy</li>
+            <li>a félévben lesz időd/energiád az elkészítésére.</li>
+        </ul>
+    </li>
+    <li>
+        Ha a jelenleg meghirdetett témáim között nem találsz számodra megfelelőt, magamtól nem fogok tudni kiírni neked témát. Hozhatsz viszont téma ötletet. Szakdolgozat-készítés és Diplomatervezés 1 tárgyak esetében a témád első verzióját az alábbi formátumban várom: @FeladatkiirasDownloadable. Az önálló labor tárgyak esetében ugyanennek a feladatkiírásnak megfelelően várok tőled egy leírást, melyben a megoldandó problémát részletezed, a technológiai/mérnöki kihívásokra koncentrálva. Érdemes figyelembe venned a <a href="/temak#gyakori-hibak-a-feladatkiirasban">gyakori hibákat a feladatkiírásban</a>.
+    </li>
+    <li>
+        A tanszéki és egyetemi körülményekhez és elvárásokhoz igazodva minden félévben csak korlátos számú hallgatót tudok fogadni. Tekintettel arra, hogy nem minden esetben tudom felmérni a várható létszámot (és egyéb oktatási feladataimon túl vállalom a konzultációkat), érdemes minél előbb, akár egy hónappal a félév tényleges kezdete előtt megkeresned engem és egyeztetni a témád. Ez alól kivételt csak azok a hallgatók képeznek, akik az aktuálisat megelőző félévben nálam végezték (sikeresen) a Diplomatervezés 1 tárgyat, és nem jelezték, hogy a Diplomatervezés 2-vel csúsznának. Mivel a feladataim félévről félévre változhatnak, elképzelhető, hogy nem fogom tudni vállalni a veled történő konzultációt a félévben; ennek valószínűsége pedig a félév közeledtével mindig fokozatosan növekszik.
+    </li>
+    <li>
+        Jelenleg az alábbi témakörökre koncentrálva vállal(hat)ok témát:
+        <ul>
+            <li>modern .NET alapú, keretrendszer-jellegű megoldások, osztálykönyvtárak fejlesztése,</li>
+            <li>Unity alapú játékfejlesztés, kapcsolódó keretrendszer-jellegű megoldás fejlesztése,</li>
+            <li>Blazor.</li>
+        </ul>
+        Amennyiben nem ezeket a technológiákat érintő témát szeretnél készíteni, úgy javaslom, hogy nézz szét a tanszéken meghirdetett <a href="https://www.aut.bme.hu/Onlab" target="_blank">Önálló labor</a>, <a href="https://www.aut.bme.hu/Szakdolgozat" target="_blank">BSc Szakdolgozat</a> és <a href="https://www.aut.bme.hu/Diploma" target="_blank">MSc Diplomatervezés</a> témák között, és válassz azok közül, vagy ez alapján keress olyan konzulenst magadnak, aki látszólag az általad is érdekelt témában járatos/aktív. Nézz szét bátran azon témák között is, amik nem az aktuális tárgyadhoz tartoznak, ez alapján ötletet is meríthetsz és konzulenst is találhatsz. A legtöbb konzulens (köztük én is) vegyesen vállalnak olyan témát, amit a hallgató "hoz"/talált ki, illetve olyat, amit a konzulens állított össze.
+    </li>
+</ul>
+
+<h2 id="gyakori-hibak-a-feladatkiirasban">Gyakori hibák a feladatkiírásban</h2>
+
+<p>
+    A végső feladatkiírást a tanszékvezető írja, személyre szabottan a szakdolgozatot/diplomatervet készítő hallgatónak. Ezt a folyamatot két lépcsőben segítjük: először a hallgató készíti el a saját maga által megálmodott feladatkiírást, ezt ezután a konzulens pontosítja, végül pedig a tanszékvezető elfogadja vagy javításra visszaküldi a konzulensnek.
+</p>
+
+<p>
+    A leggyakoribb <span class="text-danger">hibák</span> a hallgatói verzióval a feladatkiírásokban, hogy nem mérnöki pontossággal és/vagy mérnöki tartalommal készülnek el. <br />
+    Ez az alábbiakat jelenti:
+    <ul>
+        <li>nem szakmai, akadémiai a megfogalmazás,</li>
+        <li>nem a tanszékvezető nézőpontjából íródik a fogalmazás,</li>
+        <li>köznyelvi szójárások szerepelnek a szövegben,</li>
+        <li>nyelvtani hibák vagy elírások szepelnek a szövegben,</li>
+        <li>nem fókuszál a technikai tartalomra,</li>
+        <li>nem eléggé pontos a megvalósítandó feladat technikai leírása.</li>
+    </ul>
+</p>
+
+<p>
+    A fentieken túl tartalmi <span class="text-danger">hiba</span> vagy szépséghiba:
+    <ul>
+        <li>túlságosan részletes a megvalósítandó feladat technikai leírása,</li>
+        <li>a feladat várt bonyolultsága a feladatkiírásból nem állapítható meg pontosan,</li>
+        <li>a feladat várt bonyolultsága a feladatkiírás alapján túlságosan egyszerű.</li>
+    </ul>
+</p>
+
+<p>
+    Egy <span class="text-success">jó</span> feladatkiírás a fenti hibákat értelemszerűen nem tartalmazza, ezen felül pedig:
+    <ul>
+        <li>elhelyezi a megoldandó problémakört a világban közös alapismeretünk alapján,</li>
+        <li>részletezi a problémakört, vázolja a megoldás szükségességét, inspirációját és/vagy motivációját,</li>
+        <li>napjainkban aktuális problémát old meg, aktuális technológiákat használ fel a megoldáshoz,</li>
+        <li>a pontokba szedett pontos feladatrészek megfelelően pontosak, ugyanakkor nagyobb kockázat nélkül elvégezhetők.</li>
+    </ul>
+</p>
+
+<p>
+    A fentiek fényében érdemes lehet megvizsgálnod saját diplomatervezési feladatom kiírását: @FeladatkiirasDownloadable.
+</p>
+
+<p><i>Feltöltés alatt...</i></p>

@@ -1,2 +1,2 @@
-# bme
-A repository for my work being conducted at BME. Contains information primarily for my students.
+# yugabe.github.io
+A repository for my GitHub Pages static Blazor site available at <a href="https://yugabe.github.io" target="_blank">yugabe.github.io.

@@ -1,0 +1,20 @@
+{
+  "profiles": {
+    "Project": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:5000;https://localhost:5001",
+      "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}"
+    },
+    "dotnet watch run": {
+      "commandName": "Executable",
+      "executablePath": "cmd.exe",
+      "commandLineArgs": "/c \"\"C:\\Program Files (x86)\\Microsoft\\Edge Dev\\Application\\msedge\" --profile-directory=\"VS\" https://localhost:5001 && dotnet watch run --launch-profile Project\"",
+      "workingDirectory": "$(ProjectDir)",
+      "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}"
+    }
+  }
+}

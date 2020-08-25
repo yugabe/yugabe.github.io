@@ -1,7 +1,7 @@
 ﻿using Microsoft.JSInterop;
 using System.Threading.Tasks;
 
-namespace YuGabe.Bme.Document
+namespace YuGabe.GitHub.io.Document
 {
     public class DocumentService
     {

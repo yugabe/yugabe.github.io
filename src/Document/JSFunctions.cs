@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace YuGabe.Bme.Document
+namespace YuGabe.GitHub.io.Document
 {
     public class JSFunctions
     {

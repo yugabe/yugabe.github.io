@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
-using YuGabe.Bme.Document;
+using YuGabe.GitHub.io.Document;
 
-namespace YuGabe.Bme
+namespace YuGabe.GitHub.io
 {
     public class Program
     {

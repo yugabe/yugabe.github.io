@@ -1,0 +1,12 @@
+﻿@page "/issues"
+
+@code {
+    [Inject]
+    public NavigationManager NavigationManager { get; set; } = null!;
+
+    protected override Task OnInitializedAsync()
+    {
+        NavigationManager.NavigateTo("https://github.com/yugabe/yugabe.github.io/issues");
+        return Task.CompletedTask;
+    }
+}

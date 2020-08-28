@@ -1,10 +1,18 @@
 ﻿@page "/temak"
 
 @code {
-    public RenderFragment FeladatkiirasDownloadable { get; } = @<InlineDownloadable Href="/attachments/HintMe-Intelligens-tartalomajanlo-motor-Feladatkiiras.pdf">HintMe - Intelligens tartalomajánló motor - Feladatkiírás</InlineDownloadable>;
+    public RenderFragment DiptervPortal { get; } =@<a href="https://diplomaterv.vik.bme.hu/" target="_blank">VIK Diplomaterv Portál</a>;
 
+public RenderFragment FeladatkiirasDownloadable { get; } =@<InlineDownloadable Href="/attachments/HintMe-Intelligens-tartalomajanlo-motor-Feladatkiiras.pdf">HintMe - Intelligens tartalomajánló motor - Feladatkiírás</InlineDownloadable>;
+
+public RenderFragment AutPortal { get; } = @<a href="https://www.aut.bme.hu/" target="_blank">AUT Portál</a>;
+
+public RenderFragment HowToAsk { get; } = @<a href="https://stackoverflow.com/help/how-to-ask" target="_blank">Stack Overflow - How do I ask a good question?</a>;
+}
+@code {
     [Inject]
     public NavigationManager NavigationManager { get; set; } = default!;
+
     [Inject]
     public DocumentService DocumentService { get; set; } = default!;
 
@@ -21,7 +29,7 @@
         await base.OnAfterRenderAsync(firstRender);
     }
 
-    private async void OnLocationChanged(object sender, LocationChangedEventArgs locationChangedArgs)
+    private async void OnLocationChanged(object? sender, LocationChangedEventArgs locationChangedArgs)
         => await OnLocationChangedAsync(locationChangedArgs.Location);
 
     private async Task OnLocationChangedAsync(string location)
@@ -33,15 +41,18 @@
 
 <h1>Téma információk</h1>
 
-<p><i class="text-muted">Utolsó frissítés: 2020. 08. 25.</i></p>
+<p><i class="text-muted">Utolsó frissítés: 2020. 08. 28.</i></p>
 
 <p>
-    Ez a tájékoztató ismerteti azokat az alapvetéseket, amelyeket BSc Önálló labor, BSc Szakdolgozat/Szakdolgozat-készítés, MSc Önálló labor 1/2 vagy MSc Diplomatervezés 1/2 esetén, amennyiben nálam végzed ezen tárgyak valamelyikét, <b>elvárok</b>, hogy ismerned kell. Összefoglalom a félév során felmerülő fontos feladataid és a tárgy(ak) elvégzéséhez szükséges általános információkat. Még egyszer tehát: ezek az <b>én elvárásaim</b>, más konzulenseknek más elvárásai vannak.
+    Ez a tájékoztató ismerteti azokat az alapvetéseket, amelyeket BSc Önálló labor, BSc Szakdolgozat/Szakdolgozat-készítés, MSc Önálló labor 1/2 vagy MSc Diplomatervezés 1/2 (korábban "projekttárgyak") esetén, amennyiben nálam végzed ezen tárgyak valamelyikét, <b>elvárok</b>, hogy ismerned kell. Készülj azzal, hogy várhatóan kb. 2 órát el fogsz tölteni az itt található információk feldolgozásával (ide értve a hivatkozott tartalmakat is), úgyhogy csak akkor kezdj bele az itt található információk feldolgozásába, ha van ennyi időd foglalkozni a témával. Összefoglalom a félév során felmerülő fontos feladataid és a tárgy(ak) elvégzéséhez szükséges általános információkat. Még egyszer tehát: ezek az <b>én elvárásaim</b>, más konzulenseknek más elvárásai vannak. Itt a redundáns információkat, gyakran ismétlődő kérdéseket gyűjtöm, így talán hatékonyabban át tudom adni neked ezeket az infókat, ugyanakkor nem fogok kifelejteni semmit. Szeretném nem elküldeni kétszer a leírások linkjét/említeni a leírást senkinek, ezért kérlek, vedd komolyan az itt található információk feldolgozását.
 </p>
 
-<ul class="list-unstyled">
-    <li><a href="/temak#bevezeto"><b>Bevezető gondolatok</b></a></li>
-    <li><a href="/temak#gyakori-hibak-a-feladatkiirasban"><b>Gyakori hibák a feladatkiírásban</b></a></li>
+<ul class="list-unstyled font-weight-bold">
+    <li><a href="/temak#bevezeto">Bevezető gondolatok</a></li>
+    <li><a href="/temak#gyakori-hibak-a-feladatkiirasban">Gyakori hibák a feladatkiírásban</a></li>
+    <li><a href="/temak#adminisztrativ-feladatok">Adminisztratív feladatok</a></li>
+    <li><a href="/temak#a-felev-kozben">A félévi munkavégzés módja és eszközei</a></li>
+    <li><a href="/temak#linkek">Hasznos linkek</a></li>
 </ul>
 
 <h2 id="bevezeto">Bevezető gondolatok</h2>
@@ -78,6 +89,10 @@
 </ul>
 
 <h2 id="gyakori-hibak-a-feladatkiirasban">Gyakori hibák a feladatkiírásban</h2>
+
+<p>
+    Előszöris, kötelező olvasmányok és informálódás az alábbi linken: <a href="https://www.aut.bme.hu/Pages/Gyik/Diploma" target="_blank">Szakdolgozat/diploma készítés az AUT portálon</a>.
+</p>
 
 <p>
     A végső feladatkiírást a tanszékvezető írja, személyre szabottan a szakdolgozatot/diplomatervet készítő hallgatónak. Ezt a folyamatot két lépcsőben segítjük: először a hallgató készíti el a saját maga által megálmodott feladatkiírást, ezt ezután a konzulens pontosítja, végül pedig a tanszékvezető elfogadja vagy javításra visszaküldi a konzulensnek.
@@ -119,4 +134,93 @@
     A fentiek fényében érdemes lehet megvizsgálnod saját diplomatervezési feladatom kiírását: @FeladatkiirasDownloadable.
 </p>
 
-<p><i>Feltöltés alatt...</i></p>
+<p>
+    Ügyelj rá, hogy a feladatkiírásban kellően általánosan fogalmazd meg az elvárásokat, mert ami a kiírásban szerepel, azt maradéktalanul el kell végezned, különben jegylevonással (vagy rosszabb esetben az aláírás megtagadásával vagy a záróvizsga sikertelenségével) járhat.
+</p>
+
+<h2 id="adminisztrativ-feladatok">Adminisztratív feladatok, a féléves munka ütemezése</h2>
+
+<p>
+    A félév során néhány adminisztratív feladatunk lesz.<br />
+    <h3>A félév első heteiben, vagy lehetőleg a félév kezdete előtt:</h3>
+    <ul>
+        <li>Természetesen fel kell venned a tantervednek megfelelő tárgyat a Neptunban.</li>
+        <li>Ha saját témát hozol, ki kell írnom a témád a <a href="https://www.aut.bme.hu/" target="_blank">tanszéki portálon</a>. Ebben az esetben érdemes a fent olvasható <a href="/temak#gyakori-hibak-a-feladatkiirasban">feladatkiírás</a> jellegének megfelelően megpróbálnod megfogalmazni a feladatot, amit jóváhagyás, módosítás után kiírok a portálon. Szakdolgozat és Diplomaterv 1 esetében kérlek, használd a mindig aktuális sablonokat (<a href="https://www.aut.bme.hu/Pages/Gyik/Diploma" target="_blank">a feladatkiírás-sablonok jelenleg itt érhetők el</a>), más esetben elegendő csak szövegesen elküldened nekem a feladatod leírását és a pontokba szedett feladatok leírását.</li>
+        <li>Ha a témád már ki van írva, akkor jelentkezned kell rá a tanszéki portálon. Figyelj a megfelelő tárgy kiválasztására a legördülő menüben!</li>
+        <li>Ha nem egyeztettél velem korábban a jelentkezésedről, akkor semmi nem garantálja, hogy a témajelentkezésed jóvá fogom hagyni, ahogyan azt a <a href="bevezeto">bevezető gondolatok</a> részben is olvashattad.</li>
+        <li><b>Csak Szakdolgozat és Diplomatervezés 1 esetén:</b> ha jelentkeztél a tanszéki portálon, ki fogom tudni írni a témádat a @(DiptervPortal)on. Ez is egy fontos oldal, aminek az információit ismerned kell. A félévben aktuális hivatalos határidők a VIK Diplomaterv portál kezdőoldalán találhatók.</li>
+        <li>
+            Bizonyos esetekben szükséges lehet ún. Elbocsátó-befogadó nyilatkozatot kitöltened. Biztosan nem szükséges a nyilatkozat, ha nálunk, az AUT tanszéken vagy specializáción/szakirányon vagy ha a főspecializációdban mi is szervező tanszékként vagyunk feltüntetve (a hivatalos megfogalmazás szerint "A [VIK-en] az önálló laboratórium, szakdolgozat-készítés vagy diplomatervezés tantárgyak [...] teljesítése csak olyan tanszéken lehetséges, amely részt vesz a hallgató választott specializációja oktatásában."). Ha más tanszéken vagy, az aktuális szabályozás kapcsán <a href="https://www.kth.bme.hu/" target="_blank">érdeklődj a KTH-nál</a>, tanulmányozd a <a href="https://www.kth.bme.hu/aktualitasok/szabalyzatok/" target="_blank">hivatalos szabályzatokat a KTH oldalán</a> vagy érdeklődj saját tanszéked oktatási felelősénél vagy adminisztrációján.
+        </li>
+    </ul>
+
+    <h3>A félév elején, kb. a 4-7. oktatási hét között:</h3>
+    <ul>
+        <li><b>Csak Szakdolgozat és Diplomaterv 1 esetén:</b> ki kell töltened a @(DiptervPortal)on egy ún. adatlapot, amin meg kell adnod az alapadataid és a védésen választott szóbeli tárgya(i)d. BSc védés esetén egy tárgyat, MSc védés esetén (várhatóan egy félévvel később, a Diplomaterv 2 elvégzését követően) két tárgyat kell megjelölnöd. A választott tárgyaknak olyannak kell lenni, amit a képzéseden hallgattál már, és MSc esetén legalább az egyik tárgynak "szorosan kell kapcsolódnia" a dolgozatod témájához. <u>Erősen javaslom, hogy csak indokolt esetben válassz nem AUT tanszékhez tartozó tárgyat.</u></li>
+    </ul>
+
+    <h3>A félév végének közeledtével:</h3>
+    <ul>
+        <li><b>Csak Önálló labor (BSc/MSc) esetén:</b> a félévi munkádról egy rövid, 15-20 oldalas dokumentáció formájában kell beszámolnod. A dokumentációnak nincsenek formai követelményei, de szakmailag korrekt tartalmat várok el beadandóként. Ez a beadandó azt szolgálja, hogy önállóan gyakorold a szakmai írást, amit majd Szakdolgozat és Diplomaterv esetén (remélhetőleg) hasznosítani fogsz.</li>
+        <li><b>Diplomaterv 1 esetén:</b> az ún. dolgozatkezdeményt és a csatolmányt (jellemzően a forráskódot) a megadott határidőig fel kell töltened elektronikus formában a @DiptervPortal és a @AutPortal portálokra. A dolgozatkezdemény nem ellenőrzött, de reflektálnia kell, hogy már érdemi munkavégzés is történt. Javasolt, hogy a dolgozatkezdemény legalább 25 oldal bruttó terjedelmű legyen. Ezen felül elvárom, hogy a dolgozat rendelkezzen egy korrektnek szánt tartalomjegyzékkel.</li>
+        <li><b>Szakdolgozat és Dipomaterv 2 esetén:</b> a dolgozatodat és a csatolmányt (jellemzően a forráskódot) a megadott határidőig fel kell töltened elektronikus formában a @DiptervPortal és a @AutPortal portálokra.</li>
+        <li><b>Szakdolgozat és Diplomaterv 1/2 esetén:</b> a @(DiptervPortal)on láthatod, hogy egy határidő az alábbi címkével van ellátva: "Dolgozat késedelmes beadása konzulensi engedéllyel". Erre azt gondolhatod, hogy a halasztott határidő a mérvadó, de ez nem így van. <u>Szakdolgozat-készítés esetén a haladék az őszi félévben nem alkalmazható a konzulens részéről sem.</u> Ezen felül <u>haladékot kizárólag havária (betegség, baleset, egyéb vészhelyzet) esetén adok.</u> Ha a dolgozatod nem "beadható" a konzulens szakmai véleménye alapján, úgy nem kapsz haladékot, csak hogy az utolsó héten valamit össze tudj dobni Szakdolgozatnak vagy Diplomatervnek álcázva.</li>
+        <li><b>Szakdolgozat és Diplomaterv 2 esetén:</b> a dolgozat elkészültével a dolgozat elektronikusan beadott verzióját (azzal pontosan megegyező verziót, eltérés esetén záróvizsga-ismétlést ítélhet a záróvizsga-bizottság) be kell köttetned és le kell adnod nálam, ennek határideje az elektronikus beadással megegyező, de a félév végén ennek kapcsán haladékot kérhetsz (néhány napot). A dolgozat köttetésekor a klasszikus megoldások javasoltak, a színes oldalakat színesben érdemes kinyomtatni, a borító fekete, a fedlapon Szakdolgozat vagy Diplomaterv cím szerepel, a jobb also sarokban a neved és egy évszám. Ezt a dolgozatot a védésed/záróvizsgád végén visszakapod.</li>
+        <li><b>BSc/MSc Önlab és Diplomaterv 1 esetén:</b> a pótlási héten egy prezentáció formájában kell bemutatni a féléves munkát. A prezentációt az @(AutPortal)ra fel kell töltened. A prezentáció optimum kb. 10-12 dia hosszúságú legyen, 8 perc hosszúságúra érdemes tervezni az előadást, ezen felül két percben kérdésekre lehet számítani a közönségtől és a felügyelő oktatóktól. Egy dián legyen szó, nagyon röviden, legfeljebb 1 percben az alkalmazott technológiákról. Az előadás többi része kizárólag az önálló munkára, az elért eredményekre koncentráljon, kisebb részfeladatok ne legyenek bemutatva. Az előadást érdemes elgyakorolnod és mérned otthon, lehetőleg közönség (lehetőleg szakmai) előtt. A prezentációdat a leadás és előadás előtt szívesen megnézem/meghallgatom, ha az utolsó konzultációs alkalmon bemutatod.</li>
+        <li><b>Minden tárgy esetén:</b> a szorgalmi időszak végén a tanszéki portálon megkapott félévközi jeggyel zárul a tárgy, ami bekerül majd a Neptunba is a vizsgaidőszak kezdetekor. Az érdemjegyet kizárólag a féléves önálló munka alapján én adom. Az értékeléskor az alábbi tényezőket veszem (szubjektíven) figyelembe: szakmai komplexitás, szakmai fejlődés, elért konkrét eredmények, egyeztetett határidők betartása, munka nyomonkövethetősége, igényessége, egyedi megoldások, prezentáció (Önálló labor és Diplomaterv 1 esetén), önállóság.</li>
+        <li><b>Szakdolgozat és Diplomaterv 2 esetén:</b> a bekötött dolgozatod és az elektronikus anyagok átadásra kerülnek egy általam kinevezett bírálónak, aki a dolgozatodra szakmai bírálatot ad. A bírálat 1-3 oldal terjedelmű általában, a nagyobb problémákra rávilágít és a bíráló szakmai, szubjektív véleményét írja le. A bírálatot legkésőbb a védésed előtt egy héttel megküldöm neked elektronikus formában. Emellett egy lezárt borítékban érdemjegyet ajánl a dolgozatra, amit a védéseden fognak felbontani.</li>
+        <li><b>Szakdolgozat és Diplomaterv 2 esetén:</b> a vizsgaidőszakban szóbeli záróvizsgát szervez a tanszék. A szóbeli vizsgán oda illó öltözékben illik megjelenni, a fiúknak például nyakkendős öltözetet (és ehhez passzoló körítést) javaslok. A szóbeli vizsgán az önálló munka prezentációja történik, az ehhez készülő prezentáció 12-15 dia terjedelmű legyen, 10-12 percre érdemes belőni az előadás hosszát és érdemes elpróbálni 2-3 alkalommal, a lehető legélesebbet szimuláló körülmények között (kiöltözés, szakmai zsűri, felállva és az anyagot kivetítve stb.). Az előadás az önálló munka köré épüljön, a használt technológiákat egy slide-on esetleg meg lehet mutatni, de felsorolni szóban már nem kell őket. Az előadás után az 1 (Szakdolgozat védés esetén) vagy 2 (Diplomaterv védés esetén) záróvizsga tárgyból szóbeliztet az adott tárgy(ak) kijelölt oktatója (lehet, hogy 2 tárgy esetén ugyanaz a személy). A záróvizsgán derül ki a bíráló által javasolt érdemjegy is. A védésen érdemjegyet kapsz a szóbeli vizsgá(k)ra, a dolgozatodra (ide értve annak prezentációját, ahol a bizottság figyelembe veszi a konzulens és a bíráló véleményét is), és ezeket az esetleges szigorlat jeggyel és a tanulmányi átlaggal súlyozva születik meg a diploma végső jegye.</li>
+    </ul>
+</p>
+
+<p>
+    A fenti pontok inkább iránymutatásként, segítségként szolgálnak, érdemes magad is utánajárni/-olvasni hivatalos forrásokból is a teendőidnek, azért nem tudok felelősséget vállalni, ha bármi pontatlan a fentiekben. Ugyanakkor megköszönöm, ha <a href="https://github.com/yugabe/yugabe.github.io/issues" target="_blank">bármilyen pontatlanságot jelzel nekem például ehhez az oldalhoz kapcsolódó GitHub repository-ban</a>, vagy akár Teams-en, e-mailben, szóban.
+</p>
+
+<h2 id="a-felev-kozben">A félévi munkavégzés módja és eszközei</h2>
+
+<h3>Konzultáció</h3>
+
+<p>
+    A félév során jellemzően kéthetente fogunk találkozni egy fél órás konzultáció erejéig. Ennek időpontjáról az első konzultáció alkalmával egyezünk majd meg. Azt kérem, hogy amennyiben egy alkalmon nem tudsz megjelenni, akkor azt legkésőbb előtte levő este küldd meg nekem e-mailben. A pontosság szintén egy mérnöki kvalitás, a félév végi értékeléskor ezt is figyelembe fogom venni. Ha kéred, ilyenkor másik alkalmat keresünk vagy a teljes konzultációt elhalasztjuk. Nagyon gyakori, hogy a félév második felében megnövekednek az egyéb oktatási teendőid (ZH-k, beadandók), ezzel mindenképp érdemes számolnod; így, ha lehetséges, a félév elején próbálj meg minél több feladatot elvégezni, esetleg előre dolgozni. A konzultáción el kell mondanod a haladásod a korábbi beszélgetésünk óta. Az nem jó, ha a konzultáción derül ki, hogy valamivel elakadtál, és ott helyben kell (gyorsan) átbeszélnünk/megoldanunk a problémát, úgyhogy ezeket próbáld meg minimalizálni.
+</p>
+
+<h3>Értékelési szempontok</h3>
+
+<p>
+    Ha a félév végére elkészültél a félév elején kitűzött feladataiddal, láthatóan és visszakövethetően eredményes munkát végeztél, elkészült a termék, a szükséges dokumentáció és prezentáció, végül pedig a prezentációdnak (amennyiben van) jó visszhangja lett, esélyes vagy a jeles érdemjegyre. A félév elején úgy is olyan komplexitású feladatot fogunk neked kitűzni, hogy számodra megfelelő komplexitású legyen; az, hogy mennyi munkát áldozol rá, csak a saját felelősséged.<br />
+    Az értékelést ronthatják az alábbi tényezők:
+    <ul>
+        <li>szakmai/mérnöki problémák meg nem oldása vagy nem megfelelő megoldása,</li>
+        <li>bármely határidő be nem tartása,</li>
+        <li>feladatok utolsó pillanatra hagyása (kifezetten akkor, amikor nekem is plusz, sürgős munkát okozol vele),</li>
+        <li>elhalasztott konzultációs alkalom a haladás hiánya miatt,</li>
+        <li>késés a konzultációról,</li>
+        <li>meg nem jelenés a konzultáción előzetes értesítés nélkül.</li>
+    </ul>
+    <br />
+    Érdemes észrevenned, hogy a konkrét munkaórák nem számítanak az értékelési szempontok közé. Azt tudnod kell viszont, hogy az aktuális tárgyad kreditszámának harmincszoros mennyiségű órára van vetítve az elvégzendő munka mennyisége (ebbe a konzultációk, utánajárások, kutatás, dokumentáció, tényleges szakmai munka számítanak bele). Ha a félév végeztével érezhetően kevesebb, vagy a mennyiséghez mérve láthatóan rosszabb minőségben végezted a munkád, értelemszerűen rosszabb érdemjegyet kaphatsz.<br /><br />
+    Ökölszabályként érdemes tudnod, hogy <b>a legfontosabb értékelési szempont számomra a munkád minősége</b>. Ez magába foglal gyakorlatilag mindent a nyelvtantól, a kód helyességétől, optimalitásától kezdve a feladat átfogó megoldásának helyességén és általános igényességen át a megfelelő önállóságig és pontosságig.
+</p>
+
+<h3>Elakadás esetén</h3>
+<p>
+    Amennyiben egy konkrét problémával elakadsz, a legfontosabb dolog, hogy próbáld meg feltérképezni a problémát. Ha a probléma miértjével tisztában vagy, akkor megoldási lehetőségeket kereshetsz. Ha a miérttel sem vagy tisztában, akkor valószínűleg technológia/architektúra kapcsán érdemes olvasgatnod még. Ha önállóan úgy gondolod, hogy már ténylegesen nem tudsz haladni egyedül, nyugodtan írj e-mailt vagy keress Teamsen segítségkéréssel, viszont fontos betartani ilyenkor a @HowToAsk című bejegyzését. Ha ezt nem tartod be, akkor nem fogok válaszolni a kérdésre, csak megkérlek, hogy ez alapján pontosítsd a kérést. Lehetőleg ne kelljen belőnöm egy teljes környezetet és kidebugolni a problémát; ha megfelelően teszed fel a kérdést, akkor valószínűleg gyorsan fogok tudni érdemben válaszolni is és gyorsan haladhatsz tovább a feladatoddal. Bár közhelynek hangzik, de tényleg sokszor előfordul, hogy csak a keresőmotorok használatát kell megfelelően elsajátítanod. Ilyen esetekben lehet, hogy csak egy http://lmgtfy.com linket fogok a válaszban küldeni (amiben a Binget fogom beállítani neked keresőmotorként, mert sokkal jobb találatokat ad, mint a Google) :)
+    <br /><br />
+    A leggyakoribb válasz általában egy egyszerű link a hivatalos dokumentációra mutatva, ezért nyilván javaslom, hogy a hivatalos dokumentáció oldaláról próbáld meg megközelíteni a megoldást.
+</p>
+
+<h2 id="linkek">Hasznos linkek</h2>
+
+<ul>
+    <li>@AutPortal</li>
+    <li>@DiptervPortal (itt, amennyiben van saját témád, a <a href="https://diplomaterv.vik.bme.hu/hu/Student/Default.aspx">témád oldalán</a> további dokumentumok segítenek az eligazításban)</li>
+    <li>Diplomatervem feladatkiírása: @FeladatkiirasDownloadable</li>
+    <li>Aktuális <a href="https://www.aut.bme.hu/Onlab" target="_blank">Önálló labor</a>, <a href="https://www.aut.bme.hu/Szakdolgozat" target="_blank">BSc Szakdolgozat</a> és <a href="https://www.aut.bme.hu/Diploma" target="_blank">MSc Diplomatervezés</a> témák az AUT portálon</li>
+    <li><a href="https://www.aut.bme.hu/Staff/Gabe" target="_blank">Munkatársi oldalam és aktuális félévben meghirdetett témáim</a></li>
+    <li><a href="https://www.aut.bme.hu/Pages/Gyik/Diploma" target="_blank">További információk Szakdolgozat és Diplomatervezés kapcsán az AUT portálon</a></li>
+    <li><a href="https://www.aut.bme.hu/Course/VIAUMT00" target="_blank">Még több információ Szakdolgozat és Diplomatervezés kapcsán az AUT portálon</a> (igen, Szakdolgozat és Diplomaterv 2 esetében is releváns)</li>
+    <li><a href="https://www.kth.bme.hu/aktualitasok/szabalyzatok/" target="_blank">Hivatalos szabályzatok a KTH honlapján</a></li>
+    <li>@HowToAsk</li>
+    <li><a href="https://github.com/yugabe/yugabe.github.io/issues" target="_blank">Hiba/észrevétel bejelentése az oldallal kapcsolatban</a></li>
+</ul> 

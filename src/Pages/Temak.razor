@@ -41,7 +41,13 @@ public RenderFragment HowToAsk { get; } = @<a href="https://stackoverflow.com/he
 
 <h1>Téma információk</h1>
 
-<p><i class="text-muted">Utolsó frissítés: 2020. 09. 01.</i></p>
+<p class="text-muted">
+    Utolsó frissítések:
+    <ul>
+        <li>2020. 09. 01. - Kiinduló verzió</li>
+        <li>2020. 10. 11. - Bekerült <a href="temak/#a-dolgozat">A dolgozattal kapcsolatos tudnivalók</a> blokk</li>
+    </ul>
+</p>
 
 <p>
     Ez a tájékoztató ismerteti azokat az alapvetéseket, amelyeket BSc Önálló labor, BSc Szakdolgozat/Szakdolgozat-készítés, MSc Önálló labor 1/2 vagy MSc Diplomatervezés 1/2 (korábban "projekttárgyak") esetén, amennyiben nálam végzed ezen tárgyak valamelyikét, <b>elvárok</b>, hogy ismerned kell. Készülj azzal, hogy várhatóan kb. 2 órát el fogsz tölteni az itt található információk feldolgozásával (ide értve a hivatkozott tartalmakat is), úgyhogy csak akkor kezdj bele az itt található információk feldolgozásába, ha van ennyi időd foglalkozni a témával. Összefoglalom a félév során felmerülő fontos feladataid és a tárgy(ak) elvégzéséhez szükséges általános információkat. Még egyszer tehát: ezek az <b>én elvárásaim</b>, más konzulenseknek más elvárásai vannak. Itt a redundáns információkat, gyakran ismétlődő kérdéseket gyűjtöm, így talán hatékonyabban át tudom adni neked ezeket az infókat, ugyanakkor nem fogok kifelejteni semmit. Szeretném nem elküldeni kétszer a leírások linkjét/említeni a leírást senkinek, ezért kérlek, vedd komolyan az itt található információk feldolgozását.
@@ -52,6 +58,7 @@ public RenderFragment HowToAsk { get; } = @<a href="https://stackoverflow.com/he
     <li><a href="/temak#gyakori-hibak-a-feladatkiirasban">Gyakori hibák a feladatkiírásban</a></li>
     <li><a href="/temak#adminisztrativ-feladatok">Adminisztratív feladatok</a></li>
     <li><a href="/temak#a-felev-kozben">A félévi munkavégzés módja és eszközei</a></li>
+    <li><a href="/temak#a-dolgozat">A dolgozattal kapcsolatos tudnivalók</a></li>
     <li><a href="/temak#linkek">Hasznos linkek</a></li>
 </ul>
 
@@ -208,7 +215,6 @@ public RenderFragment HowToAsk { get; } = @<a href="https://stackoverflow.com/he
         <li>késés a konzultációról,</li>
         <li>meg nem jelenés a konzultáción előzetes értesítés nélkül.</li>
     </ul>
-    <br />
     Érdemes észrevenned, hogy a konkrét munkaórák nem számítanak az értékelési szempontok közé. Azt tudnod kell viszont, hogy az aktuális tárgyad kreditszámának harmincszoros mennyiségű órára van vetítve az elvégzendő munka mennyisége (ebbe a konzultációk, utánajárások, kutatás, dokumentáció, tényleges szakmai munka számítanak bele). Ha a félév végeztével érezhetően kevesebb, vagy a mennyiséghez mérve láthatóan rosszabb minőségben végezted a munkád, értelemszerűen rosszabb érdemjegyet kaphatsz.<br /><br />
     Ökölszabályként érdemes tudnod, hogy <b>a legfontosabb értékelési szempont számomra a munkád minősége</b>. Ez magába foglal gyakorlatilag mindent a nyelvtantól, a kód helyességétől, optimalitásától kezdve a feladat átfogó megoldásának helyességén és általános igényességen át a megfelelő önállóságig és pontosságig.
 </p>
@@ -250,6 +256,73 @@ public RenderFragment HowToAsk { get; } = @<a href="https://stackoverflow.com/he
     A diplomaterv a szakdolgozattal gyakorlatilag teljes mértékben megegyezik, azzal a kivétellel, hogy most dupla annyi munkát kell elvégezned a két félév alatt. Fontos, hogy ezek aránya 1:2, tehát a dipterv 1 során a teljes munka kb. egyharmadával kell elkészülnöd (kreditarányosan). Ez a gyakorlatban általában azt szokta jelenteni, hogy a szakmai munkával kb. 70%, a dolgozattal kb. 30% mennyiségben kell elkészülnöd. A félév végén egy ún. "Diplomaterv-kezdeményt" kell leadnod az @(AutPortal)on és @(DiptervPortal)on, a megfelelő csatolmánnyal (ami jellemzően forráskód). A kezdeményt nem fogom véleményezni, de javaslom, hogy bruttó 20 oldal készüljön el a dolgozatból (ami még természetesen várhatóan nem végleges). Ezen túl a dolgozatot ténylegesen megvédeni a záróvizsgán csak a Diplomatervezés 2 tárgy keretében fogod. Dipterv 1 esetén az önálló laborokkal megegyező, félévközi prezentáció lesz.
 </p>
 
+<h2 id="a-dolgozat">A dolgozattal kapcsolatos tudnivalók</h2>
+<p>
+    A diplomaterv és szakdolgozat struktúrájában, kinézetében, koncecpiójában a triviális eltérésektől ("Szakdolgozat"/"Diplomaterv" szerepel a kötésen, diplomatervet két félév alatt készítesz stb.) eltekintve megegyeznek, ebben a fejezetben csak "dolgozat" néven hivatkozom a továbbiakban.
+</p>
+
+<ul>
+    <li>A dolgozatot önállóan, a konzulens segítségével készíted. Nyugodtan kikérheted a dolgozat kapcsán közeli ismerőseid véleményét, de a szakmai tartalmat és a szöveget neked kell szolgáltatnod.</li>
+    <li>A dolgozat teljes tartalmáért Te felelsz. A konzulens segíthet a tartalom koordinálásában, szakmai irányvonalak meghatározásában, formázási, fogalmazási tanácsokat adhat. Végső soron a konzulens felelőssége eldönteni a félév (Diplomatervezés esetén a 2. félév) végén, hogy a dolgozat beadható-e. Ez jellemzően (az esetek túlnyomó többségében) azáltal történik, hogy a félévközi jegyed elégséges vagy annál jobb lesz. Értelemszerűen ne az elégséges jegyre törekedj, mert az könnyen azt eredményezheti, hogy a védésen fogsz megbukni! Ebben az esetben érdemes inkább elégtelent kérned a félév végén, hogy legyen még egy egész féléved a fennmaradó problémás részek javítására. Ha elégtelennel átmész, úgy a dolgozatod abban a formájában fixálódik, és azt kell megvédened a záróvizsgán, a védésen. Értelemszerűen jóval nehezebb egy elégséges dolgozatot megvédeni. Ha ilyenkor a bizottság nem enged át a záróvizsgán, következő félévben védheted csak újra a dolgozatot, azzal a hátránnyal, hogy ekkor már abszolvált státuszú leszel, tehát nem lesz aktív féléved, és semmilyen konzulens nem köteles elvállalni a konzultációdat, ugyanis önállóan képesnek kell lenned a dolgozat elkészítésére (tekintettel, hogy abszolváltál, magyarul az összes, ideértve a dolgozathoz kapcsolódó tárgyat is elvégezted).</li>
+    <li>A dolgozathoz használd a mindenkori aktuális <a href="/temak/#aut-infok">sablont az AUT honlapjáról (NE a Diplomaterv portál honlapjáról)</a>! A dolgozat tartalmáról, formájáról számos hasznos tudnivalót találsz a linken elérhető sablonban.</li>
+    <li>A dolgozatod egy részét részletesen véleményezem (általad kiválasztott kb. 15, véglegesnek szánt oldalt - értsd: ha én nem lennék, ezt a 15 oldalt változtatás nélkül beadnád), ha elküldöd a félév közben. Nem minden hibát, hanem minden típusú hibából egyet fogok csak megjelölni, és nem biztos, hogy az elsőt!</li>
+    <li>A dolgozat teljes hossza formális elvárásban nem definiált, szakdolgozat esetén szerintem a 40-60, diplomaterv esetén 50-75 oldal az ideális. A dolgozat hosszához hozzátartozik, hogy érdemes a tömörebb irányba próbálni szorítani a dolgozat hosszát, általában a 60 oldalas szakdolgozat és 75 oldalas diplomaterv már erősen vontatott, az oldalszám önmagában nem ad értéket a végső eredményhez.</li>
+    <li>Érdemes arra törekedned, hogy a számodra szakmailag központi domén legyen a felépítés alapegysége. A vízesés modell lépései (specifikáció, tervezés, implementáció, tesztelés) szerintem nagyon személytelen és a dolgozatodhoz tudsz találni pontosabb főfejezeteket is, amik valójában akár ezeknek a fázisoknak tudhatók be.</li>
+    <li>A dolgozatot egyes szám első személyben írd, használhatsz emellett általános alanyt (de "érdemes kerülni": "érdemes kerülnöd").</li>
+    <li>Az <i>Olvasót</i> ilyen módon nevesítheted, de nem szokás.</li>
+    <li>A dolgozatban igyekezz törekedni a formális megfogalmazásokra! A dolgozat ettől még legyen érthető és élvezhető az olvasó számára!</li>
+    <li>A célközönséged egy olyan szakmai közönség, akik érdeklődnek azon szakterület iránt, amiben végezted a munkád, és legalább pontosan olyan szintű szakmai múlttal rendelkeznek, mint Te is. Ez alól kivétel a dolgozat összefoglaló szövege. A dolgozat összefoglalójából érdeklődőként el kell tudjam dönteni, hogy érdekel-e a dolgozat teljes egésze vagy sem.</li>
+    <li>A dolgozatod legyen <u>igényes</u>, ide értve a szerkesztést, tördelést, szövegezést, nyelvtant, szakmai tartalmat! Ez az egyetemi képzésed kulminációja, az igényességedet tükrözi. Mérnök leszel, ezért érdemes legalább megpróbálnod törekedni a mérnöki pontosságra, amit elvileg el kellett sajátítanod az elmúlt években.</li>
+    <li>A folyó szövegben is van lehetőséged megtörni az egyszínűséget, érdemes például a <code>Consolas</code> monotype fontot használni, ha szövegben kód szimbólumra (osztály, interfész, metódusnév stb.) esetleg API végpontra hivatkozol, esetleg használhatsz <i>dőlt betűket kiemeléshez</i>. Próbáld meg viszont kerülni a folyó szövegben a <b>félkövérrel való kiemelést</b>. Néha természetesen ezek közül lehetnek kivételek.</li>
+    <li>Bár a szakdolgozat sablon említi, érdemes a Kód stílus helyett a Visual Studio-ból vagy VS Code-ból beillesztett tartalmakat nem felülírni az alapértelmezett Kód stílussal, mert úgy elvész a syntax highlight. Ha tördelési problémákba ütközöl, a kódrészleteket beszúrhatod új objektumként is (így objektumként méretezhető és külön szerkesztőben szerkeszthető lesz), vagy tördelheted kézzel is a sorokat. A kód monospace és nem sorkizárt, így 2 vagy 4 szóköz fog egy tabulátort kiadni. Ha szeretnéd kiemelni, esetleg egy vékony fekete keretet kaphatnak a kódrészletek.</li>
+    <li>Alkalmazhatsz képaláírásokat, ekkor viszont mindenképp konzekvensen próbáld meg alkalmazni őket, azaz legyenek sorban (vagy még profibb: fejezethez kötődően sorban, pl. a 2.1-es ábra a második fejezet első ábrája) sorszámozottak. A beszúrt kódrészleteknek akkor van a legnagyobb haszna, ha szintén tudsz értelmes, egy-másfél soros leírást ábracímként alá szúrni.</li>
+    <li>Hibák lehetnek a - köznapi kommunikációs stílusunkban is gyakran előforduló - klasszikus kommunikációs hibák. Ilyenek például az általánosítás ("Mindenki számára probléma..."), a szubjektív túlzás ("A legfontosabb eleme a rendszernek...") vagy a közvetett feltételezés a másik félről ("Nem nehéz elképzelni, hogy...", +itt rejtett alany is van). Ha van lehetőséged rá (és releváns), a tagadó mondatokat megfordítva próbáld meg pozitív állítással leírni ugyanazt (néha kiderül, hogy nem volt kontextusa a mondatodnak, mert a tagadással nem állítottál tényszerűt). Hasonlóképp gyakran alkalmazunk olyan töltelék mondatrészeket, amik fel sem tűnnek, hogy önmagukban elhagyhatók és a teljes állítmányunk megmarad - ekkor ha konnotációjában nem változik a szöveg, érdemes törölnöd a "fillert"; a lényegretörő leírást könnyebb követni. Ezek a "hibák" többedszeri olvasásra sem biztos, hogy feltűnnek, de jelentősen növeli a dolgozat minőségét, ha megpróbálsz odafigyelni rájuk és megpróbálod elkerülni őket.</li>
+    <li>A leggyakoribb nyelvi hiba <a href="https://publications.europa.eu/code/hu/hu-4100100.htm" target="_blank">a vesszők hibás kezelése</a>.</li>
+    <li>Az egyik leggyakoribb nyelvi hiba szakmai szövegben az <a href="http://publications.europa.eu/code/hu/hu-4100400.htm" target="_blank">idegen nevek, szavak írása és toldalékolása (europa.eu)</a>. Ez csak nyelvtani profiknak fontos, ugyanis gyakoribb a hibás alak, mint a helyes, ezért a legtöbb esetben célszerű szándékosan a hibás alakot alkalmazni. Mindenesetre légy vele tisztában, hogy helyes-e, amit írsz!</li>
+    <li>A forrásmegjelölést mindig alkalmaznod kell, ha <u><b>olyan állító mondatot írsz le, melynek tényalapját nem Te kreáltad</b></u>. Például ha egy technológiáról írsz, amit nem Te készítettél, akkor minden tudásod máshonnan származik, ezért hivatkoznod kell.</li>
+    <li>A leggyakrabban azt hiszed, hogy "majd utólag" beleteszed a forrásmegjelöléseket. <b class="text-danger">Hiba!</b> Ezzel mindkettőnknek dupla munkát csinálsz... Jó lenne, ha <b>a dolgozat írása közben vennéd fel a korrekt forrásmegjelöléseket</b>, és nem nekem kellene ezeket egyesével jeleznem a dolgozat átolvasásakor. Ezután neked valahonnan ki kell keresned a hivatkozást, amit eredetileg is meg kellett volna tenned, és beszúrni a dolgozatba. Ha nem kerestél hivatkozást, akkor az a hiba, ha pedig nem szúrtad be, akkor az. Szóval a hiba csak a Tiéd.</li>
+    <li>Forrásmegjelölések esetén két féle megjelölést érdemes alkalmazni. Az egyik, amikor egy bevezető fejezetben röviden leírod, hogy ez most egy áttekintés, aminek összeállításához az alábbi forrásokat használtad fel: [1], [2], [3]. Ugyanezt alkalmazhatod akár a fejezetcímen magán is. Ilyenkor érdemes nevesíteni is a forrást és nem csak a számát beírni. Más esetekben, amikor a folyó szövegben van egy forrásod (ismét: állító mondat olyan dologról, amit máshonnan tudsz), akkor általában elég a forrást számmal hivatkozni [4]. Lábjegyzeteket<sup>[5]</sup> is alkalmazhatsz. Lábjegyzetben kiegészítő információk kaphatnak helyet, amiket nem akarsz a folyó szövegben kifejteni, mert érintőleges információ, esetleg egy rövidítés feloldása vagy egy kifejezés magyar vagy angol megfelelője. Hivatkozást is helyezhetsz a lábjegyzetbe, ekkor viszont felmerülhet a kérdés, hogy nem a törzsben kellene-e szerepelnie az információnak.</li>
+    <li>A Wikipedia nem szerepelhet a dolgozatodban, mint hivatkozás. A Wikipedia nem forrás, csak hivatkozások informális tára. Használhatod a Wikipediát kutatásra, viszont amikor hivatkozni szeretnél ottani tartalmat, annak hivatkozásán kell felkeresned az igazi forrást. Ha nincs hivatkozva (pl. <i>[citation needed]</i> látható az oldalon vagy egyszerűen nincs hivatkozás), akkor továbbra sem használhatod a Wikipediát hivatkozásra, más forrást kell keresned.</li>
+    <li>A magyar nyelvű Wikipediával ne is próbálkozz, nem csak hivatkozásra, hanem kutatásra sem használható. Kizárólag az angol nyelvű Wikipediát használhatod kutatásra.</li>
+    <li>A dolgozatod egy bíráló fogja olvasni, aki szakmailag legalább olyan tapasztalattal rendelkezik, amilyen képesítést te szeretnél most megszerezni azáltal, hogy a dolgozatod beadod.</li>
+    <li>Azokról az alaptechnológiákról egy bekezdésnél többet nem kell írnod, ami a képzésedben kötelező elemként szerepelt, ugyanis a bírálónak ezekkel tisztában kell lennie.</li>
+    <li>Igyekezz megtörni a dokumentumfolyamot kb. két-három oldalanként! Szúrj be egy szemléltető ábrát, egy áttekintést, egy releváns kódrészletet!</li>
+    <li><u><b>Ne beszélj az elkészült kódról!</b></u> A kódot legjobban a kód maga, egy ábra (pl. osztálydiagram), esetleg pszeudokód szemlélteti. A kód koncepciójáról és működéséről szabadon írhatsz, de ne írj arról, hogyan van megírva a kód! Ezt a lehető legrosszabb olvasnia a bírálónak, semmi hozzáadott értéke nincsen és csak elvesz a dolgozat végső értékéből (ezáltal akár a végső javasolt érdemjegyből). <b>Példa, hogy hogy NE nézzen ki a szöveg</b>: <span class="text-secondary">A <code>CarsController</code> osztállyal leszármaztam a <code>ControllerBase</code> osztályból, ami a controllerek alapfunkcióit szolgáltatja. Ebben megírtam az autók lekérdezését szolgáló <code>Get()</code> metódust, amiben a visszatérés előállítására használtam a <code>ControllerBase</code> <code>Json()</code> metódusát. A <code>Get()</code> paraméterként várja a <code>CarsFilter</code> objektumot a <code>filter</code> nevű paraméterben, amit átadok az injektált <code>CarsDataService</code> <code>GetCars()</code> metódusának.</span> Ehelyett értelemszerűen azt a 6 soros kódrészletet érdemes beszúrni, ami önmagáért beszél, és kiegészíteni egy rövid szöveggel, például: <span class="text-secondary">A <code>CarsController</code> controllerben valósítottam meg az autók szűrhető lekérdezését a <code>Get()</code> metódusban, ami az <code>/api/cars</code> végponton érhető el.</span></li>
+    <li>
+        Használd a Word profibb funkcióit!
+        <ul>
+            <li>Minden aláhúzás javítására van korrekt módszer. Az angol nyelvű szövegeknél a bal alsó sarokban, a szöveget kijelölve válthatsz nyelvet. Minden piros aláhúzást nézz át, és ha gyakran használatos szakkifejezésről van szó, akkor ellenőrizd online a helyes írásmódot! Ha helyes az írásmód, vedd fel a szótárba! A vesszőhibák és hasonló nyelvtani javaslatok az esetek 95%-ában helyesen ajánlanak, ezeknek is nézz utána! A piros aláhúzások néha azért léteznek, mert köznyelvben használunk bizonyos szavakat, viszont ezt nyelvtanilag helytelen, ezért nem írhatjuk le.</li>
+            <li>Az irodalomjegyzék hivatkozásához használd a beépített irodalomjegyzék funkciót! Online tartalmaknál az elérés dátumát érdemes megadnod.</li>
+            <li>Gyakran frissítsd a tartalomjegyzéket és hivatkozásokat, vizsgáld meg, van-e törött kereszthivatkozásod a dokumentumban!</li>
+        </ul>
+    </li>
+    <li>
+        A köttetett dolgozat formája:
+        <ul>
+            <li>A dolgozat előlapján "Szakdolgozat" vagy "Diplomaterv" szerepeljen, ezüst vagy arany betűkkel. Az előlapon a neved és az évszám szerepeljen a jobb alsó sarokban. Ha szeretnéd, alcímként szerepelhet az előlapon a dolgozatod címe is.</li>
+            <li>A dolgozat gerincére kerülhet bármely permutációja az alábbiaknak (általában üres): a dolgozat címe, név, évszám, "Szakdolgozat" vagy "Diplomaterv".</li>
+            <li>A dolgozatból egyetlen példányt kell leadni, amit sikeres védés végén visszakapsz.</li>
+            <li>A dolgozat azon oldalait, amin színes ábrák/szövegek (pl. syntax highlight-olt kódrészlet) található, mindenképp érdemes színesben nyomtattatnod (ez feláras szokott lenni).</li>
+            <li>A sablon első oldala csak figyelemfelhívás arra, hogy amikor a dolgozatot kötteted, a feladatkiírást is bele kell köttetned. Ezt nagyon sokan félreértitek. A lényeg, hogy a dolgozat első oldalán levő placeholder <i>placeholder</i>, szóval <u>törölni</u> kell. Köttetéskor két fájlt adj át a nyomtatószalonban: a feladatkiírást és a dolgozatot. A nyomtatott verzióban a dolgozat elé fűzik a kinyomtatott feladatkiírást. <b>NE</b> a dolgozatom.docx fájlban szerepeljen, mert akkor elcsúsznak az oldalszámok! A számomra véleményezésre küldött dokumentumokban már nem szeretném ezt látni.</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>Bírálói értékelés</h3>
+
+<p>
+    A dolgozatodról az általam kinevezett szakmai bíráló véleményt készít, amelyet legfeljebb a védésed időpontja előtt egy héttel eljuttatok hozzád. Az értékelés 1-4 A/4 oldal terjedelmű, a dolgozat egészére vonatkozó, szubjektív, elsősorban szakmai/formai vélemény. Az értékelés végén jellemzően 1-4 konkrét, általában szakmai kérdést tesz fel a bíráló a dolgozattal kapcsolatban. A prezentációd végén 1 összesítő vagy 1-1 dián reflektálj a bizottságnak a bíráló által feltett kérdésekre! Érdemes odafigyelni a kérdés mögöttes konnotációjára, például arra, hogy ha a kérdést a bíráló vélhetően azért tette fel, mert a szaktudásod vagy a problémamegoldó-képességed kérdőjelezi meg, a választ ennek megfelelően kell (természetesen korrekt módon) előállítanod. Ha szükséges, végezz további kutatást vagy méréseket, esetleg bővítsd az alkalmazásod a kérdéses funkciókkal!
+</p>
+<p>
+    A bírálati szempontok nincsenek formalizálva, így a bíráló általában személyes szakmaiságára és a dolgozat átfogó igényességére alapozva készíti bírálatát. A formalizmus hiányától függetlenül a leggyakrabban az alábbi bírálati szempontok szoktak előkerülni:
+    <ul>
+        <li>a szakmai tartalom minősége és mennyisége,</li>
+        <li>formális minőség (nyelvtan, elírások, formázás, tördelés, felosztás, tagolás),</li>
+        <li>szemléltetések (ábrák, kódrészletek, táblázatok, kimutatások, diagramok) minősége és mennyisége,</li>
+        <li>a dolgozat átfogó élvezhetősége, olvasó vezetése, érthetőség, követhetőség.</li>
+    </ul>
+</p>
+
 <h2 id="linkek">Hasznos linkek</h2>
 
 <ul>
@@ -262,7 +335,7 @@ public RenderFragment HowToAsk { get; } = @<a href="https://stackoverflow.com/he
     <li><a href="https://www.vik.bme.hu/document/1343/original/BSc-ZV-170607.pdf" target="_blank">BSc szakdolgozat-, záróvizsga- és oklevélszabályzat (vik.bme.hu)</a></li>
     <li><a href="https://www.aut.bme.hu/Staff/Gabe" target="_blank">Munkatársi oldalam és aktuális félévben meghirdetett témáim</a></li>
     <li><a href="https://www.aut.bme.hu/Pages/Gyik/Diploma" target="_blank">További információk Szakdolgozat és Diplomatervezés kapcsán az AUT portálon</a></li>
-    <li><a href="https://www.aut.bme.hu/Course/VIAUMT00" target="_blank">Még több információ Szakdolgozat és Diplomatervezés kapcsán az AUT portálon</a> (igen, Szakdolgozat és Diplomaterv 2 esetében is releváns)</li>
+    <li id="aut-infok"><a href="https://www.aut.bme.hu/Course/VIAUMT00" target="_blank">Még több információ Szakdolgozat és Diplomatervezés kapcsán az AUT portálon</a> (igen, Szakdolgozat és Diplomaterv 2 esetében is releváns)</li>
     <li><a href="https://www.kth.bme.hu/aktualitasok/szabalyzatok/" target="_blank">Hivatalos szabályzatok a KTH honlapján</a></li>
     <li>@HowToAsk</li>
     <li><a href="https://github.com/yugabe/yugabe.github.io/issues" target="_blank">Hiba/észrevétel bejelentése az oldallal kapcsolatban</a></li>
